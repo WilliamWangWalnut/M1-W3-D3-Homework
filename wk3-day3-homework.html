@@ -59,7 +59,8 @@
 
   function squareNumber(num) {
       var squaredNumber = num * num;
-      document.getElementById("solution").innerHTML = 'The result of squaring the number ' + num + ' is ' + squaredNumber;
+      document.getElementById("solution").innerHTML = 'The result of squaring the number ' 
+      + num + ' = ' + squaredNumber;
   }
       
   var squareButton = document.getElementById("square-button");
@@ -74,6 +75,60 @@
 
   /* WRITE YOUR HOMEWORK SCRIPTS BELOW HERE */
 
+  /* 2.Half-Number */
+  function halfNumber(num) {
+      var halfNumber = num / 2;
+      document.getElementById("solution").innerHTML = 'The result of half of the number ' 
+      + num + ' = ' + halfNumber;
+  }
+      
+  var halfButton = document.getElementById("half-button");
+  halfButton.addEventListener("click", function() {
+    var num = document.getElementById("half-input").value;
+    halfNumber(num);
+  });
+
+  /* 3.Fraction & Whole, keep 3 decimals */
+  function fracNumber(num1,num2) {
+      var fracNumber = num1 / num2 * 100;
+      var fracNumber3 = fracNumber.toFixed(3); /*keep 3 digits*/
+      document.getElementById("solution").innerHTML = num1 + " is "
+      + fracNumber3 + '% of ' + num2;
+  }
+      
+  var fracButton = document.getElementById("percent-button");
+  fracButton.addEventListener("click", function() {
+    var num1 = document.getElementById("percent1-input").value;
+    var num2 = document.getElementById("percent2-input").value;
+    fracNumber(num1,num2);
+  });
+
+  /* 4.Integer */
+  function wholeNumber(num) {
+      var wholeNumber = Math.round (num);
+      document.getElementById("solution").innerHTML = 'The nearest whole number of ' 
+      + num + ' = ' + wholeNumber;
+  }
+      
+  var wholeButton = document.getElementById("int-button");
+  wholeButton.addEventListener("click", function() {
+    var num = document.getElementById("int-input").value;
+    wholeNumber(num);
+  });
+
+  /* 5.Area of Radius */
+  function area(num) {
+      var area = Math.PI * num * num;
+      var area3 = area.toFixed (3) /* Keep 3 digits */
+      document.getElementById("solution").innerHTML = 'The area of circle with radius ' 
+      + num + ' = ' + area3;
+  }
+      
+  var areaButton = document.getElementById("area-button");
+  areaButton.addEventListener("click", function() {
+    var num = document.getElementById("area-input").value;
+    area(num);
+  });
 
 </script>
 </body>
